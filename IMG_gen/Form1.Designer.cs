@@ -28,13 +28,14 @@
             this.jumRange = new System.Windows.Forms.MaskedTextBox();
             this.Jumprange = new System.Windows.Forms.Label();
             this.drawSelect = new System.Windows.Forms.GroupBox();
+            this.random = new System.Windows.Forms.RadioButton();
             this.arcs = new System.Windows.Forms.RadioButton();
             this.lines = new System.Windows.Forms.RadioButton();
             this.noise = new System.Windows.Forms.RadioButton();
-            this.random = new System.Windows.Forms.RadioButton();
             this.randomColor = new System.Windows.Forms.CheckBox();
             this.saveImage = new System.Windows.Forms.Button();
             this.saveImageDialog = new System.Windows.Forms.SaveFileDialog();
+            this.clipboardButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picOutput)).BeginInit();
             this.drawSelect.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +92,18 @@
             this.drawSelect.TabStop = false;
             this.drawSelect.Text = "What to draw:";
             // 
+            // random
+            // 
+            this.random.AutoSize = true;
+            this.random.Location = new System.Drawing.Point(188, 20);
+            this.random.Name = "random";
+            this.random.Size = new System.Drawing.Size(65, 17);
+            this.random.TabIndex = 3;
+            this.random.TabStop = true;
+            this.random.Text = "Random";
+            this.random.UseVisualStyleBackColor = true;
+            this.random.CheckedChanged += new System.EventHandler(this.random_CheckedChanged);
+            // 
             // arcs
             // 
             this.arcs.AutoSize = true;
@@ -128,18 +141,6 @@
             this.noise.UseVisualStyleBackColor = true;
             this.noise.CheckedChanged += new System.EventHandler(this.noise_CheckedChanged);
             // 
-            // random
-            // 
-            this.random.AutoSize = true;
-            this.random.Location = new System.Drawing.Point(188, 20);
-            this.random.Name = "random";
-            this.random.Size = new System.Drawing.Size(65, 17);
-            this.random.TabIndex = 3;
-            this.random.TabStop = true;
-            this.random.Text = "Random";
-            this.random.UseVisualStyleBackColor = true;
-            this.random.CheckedChanged += new System.EventHandler(this.random_CheckedChanged);
-            // 
             // randomColor
             // 
             this.randomColor.AutoSize = true;
@@ -166,11 +167,22 @@
             this.saveImageDialog.DefaultExt = "png";
             this.saveImageDialog.Filter = "PNG-Image|*.png|JPEG-Image|*.jpg";
             // 
+            // clipboardButton
+            // 
+            this.clipboardButton.Location = new System.Drawing.Point(175, 13);
+            this.clipboardButton.Name = "clipboardButton";
+            this.clipboardButton.Size = new System.Drawing.Size(102, 23);
+            this.clipboardButton.TabIndex = 7;
+            this.clipboardButton.Text = "Copy to Clipboard";
+            this.clipboardButton.UseVisualStyleBackColor = true;
+            this.clipboardButton.Click += new System.EventHandler(this.clipboardButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 549);
+            this.Controls.Add(this.clipboardButton);
             this.Controls.Add(this.saveImage);
             this.Controls.Add(this.randomColor);
             this.Controls.Add(this.drawSelect);
@@ -202,6 +214,7 @@
         private System.Windows.Forms.CheckBox randomColor;
         private System.Windows.Forms.Button saveImage;
         private System.Windows.Forms.SaveFileDialog saveImageDialog;
+        private System.Windows.Forms.Button clipboardButton;
     }
 }
 

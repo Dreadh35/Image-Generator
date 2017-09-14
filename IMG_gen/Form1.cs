@@ -271,6 +271,11 @@ namespace IMG_gen
             }
 
         }
+
+        private void clipboardButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetImage(picOutput.Image);
+        }
     }
 
 
